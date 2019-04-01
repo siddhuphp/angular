@@ -14,14 +14,14 @@
 
   
 <div class="container">
-    <div class="form-group row">    
+    <div class="form-group row">       
         <div class="col-xs-3">
-          <label for="ex2">Filters</label>
-          <input class="form-control" id="filter" type="text" [(ngModel)] = "filterInput">
-        </div>    
-      </div>
+          <label for="ex2">Filter:</label>
+          <input class="form-control" type="text" [(ngModel)]="filterValue"  />
+        </div>        
+    </div>
   <h2>{{title}}</h2>
-  <h5>This is my filter value: {{filterInput}}</h5>
+  <h5> This is filter value: {{filterValue}}</h5>
   <table class="table table-striped">
     <thead>
       <tr>
@@ -29,15 +29,17 @@
         <th>Price</th>
         <th>Date</th>
         <th>Rating</th>
+        <th>Description</th>
         <th><button class="btn btn-success" (click)="ToggleImage()">{{showImage?"Hide Image":"Show Image"}}</button></th>        
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let product of products">
-        <td>{{product.Name}}</td>
-        <td>{{product.Price}}</td>
-        <td>{{product.date}}</td>
+      <tr *ngFor="let product of products | ProductSearchPipe:filterValue">
+        <td>{{product.Name | uppercase }}</td>
+        <td>{{product.Price | currency:"₹" }}</td>
+        <td>{{product.date | date:"MM/dd/yy"}}</td>
         <td>{{product.rating}}</td>
+        <td>{{product.desc | Productsdesc}}</td>
         <td><img [src]="product.img" *ngIf="showImage" /></td>
       </tr>     
     </tbody>
