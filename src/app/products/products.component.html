@@ -32,7 +32,7 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let product of products">
+      <tr *ngFor="let product of products | ProductSearchPipe:filterValue">
         <td>{{product.Name | uppercase }}</td>
         <td>{{product.Price | currency:"₹" }}</td>
         <td>{{product.date | date:"MM/dd/yy"}}</td>

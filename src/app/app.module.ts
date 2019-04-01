@@ -6,12 +6,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ProductsComponent } from './products/products.component';
 import { ProductsdescPipe } from './products/products-desc.pipe';
+import { ProductSearchPipe } from './products/productSearch.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
     ProductsComponent,    
-    ProductsdescPipe    
+    ProductsdescPipe,
+    ProductSearchPipe    
   ],
   imports: [
     BrowserModule,
