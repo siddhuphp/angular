@@ -17,6 +17,7 @@ export class ProductsComponent implements OnInit {
   ToggleImage(): void{
     this.showImage = !this.showImage;
   };
+  filterInput:string = '';
   products:any[] = [
     {
       'Name':'Santoor',

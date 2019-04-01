@@ -11,8 +11,17 @@
 </head>
 <body>
 
+
+  
 <div class="container">
+    <div class="form-group row">    
+        <div class="col-xs-3">
+          <label for="ex2">Filters</label>
+          <input class="form-control" id="filter" type="text" [(ngModel)] = "filterInput">
+        </div>    
+      </div>
   <h2>{{title}}</h2>
+  <h5>This is my filter value: {{filterInput}}</h5>
   <table class="table table-striped">
     <thead>
       <tr>
