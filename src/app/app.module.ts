@@ -7,13 +7,15 @@ import { AppComponent } from './app.component';
 import { ProductsComponent } from './products/products.component';
 import { ProductsdescPipe } from './products/products-desc.pipe';
 import { ProductSearchPipe } from './products/productSearch.pipe';
+import { StarComponent } from './shared/star.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ProductsComponent,    
     ProductsdescPipe,
-    ProductSearchPipe    
+    ProductSearchPipe,
+    StarComponent   
   ],
   imports: [
     BrowserModule,
