@@ -34,4 +34,8 @@ export class StarComponent implements OnInit, OnChanges, OnDestroy {
         //Add 'implements OnDestroy' to the class.
         console.log(">> At OnDestory");
     }
+
+    OnStar(): void {
+        this.ratingClicked.emit(`This is your product rating ${this.rating}`);
+    }
 }

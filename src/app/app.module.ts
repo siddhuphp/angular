@@ -8,6 +8,7 @@ import { ProductsComponent } from './products/products.component';
 import { ProductsdescPipe } from './products/products-desc.pipe';
 import { ProductSearchPipe } from './products/productSearch.pipe';
 import { StarComponent } from './shared/star.component';
+import { ProductService } from './products/products.service';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,9 @@ import { StarComponent } from './shared/star.component';
     AppRoutingModule,
     FormsModule,
   ],
-  providers: [],
+  providers: [
+    ProductService,
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

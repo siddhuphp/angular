@@ -18,6 +18,13 @@ export class ProductsComponent implements OnInit {
   ToggleImage(): void{
     this.showImage = !this.showImage;
   };
+
+  onDataRecive(message: String){
+    this.title = `Product list ${message}`;
+  }
+
+
+
   filterValue:'';
   products:Iproduct[] = [
     {
