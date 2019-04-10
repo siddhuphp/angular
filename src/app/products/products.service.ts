@@ -6,7 +6,7 @@ import { Iproduct } from "./products.module";
 export class ProductService {
     getProducts(): Iproduct[]
     {
-        retun [
+        return [
             
         ]
     }

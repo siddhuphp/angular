@@ -9,6 +9,8 @@ import { ProductsdescPipe } from './products/products-desc.pipe';
 import { ProductSearchPipe } from './products/productSearch.pipe';
 import { StarComponent } from './shared/star.component';
 import { ProductService } from './products/products.service';
+import { App_producrts } from './api_products/app_products.component';
+import { App_productService } from './api_products/app_products.service';
 
 @NgModule({
   declarations: [
@@ -16,7 +18,8 @@ import { ProductService } from './products/products.service';
     ProductsComponent,    
     ProductsdescPipe,
     ProductSearchPipe,
-    StarComponent   
+    StarComponent,
+    App_producrts   
   ],
   imports: [
     BrowserModule,
@@ -25,6 +28,7 @@ import { ProductService } from './products/products.service';
   ],
   providers: [
     ProductService,
+    App_productService
   ],
   bootstrap: [AppComponent]
 })
