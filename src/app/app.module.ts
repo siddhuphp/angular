@@ -11,7 +11,7 @@ import { StarComponent } from './shared/star.component';
 import { ProductService } from './products/products.service';
 import { App_producrts } from './api_products/app_products.component';
 import { App_productService } from './api_products/app_products.service';
-import { HttpClient } from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -21,12 +21,13 @@ import { HttpClient } from '@angular/common/http';
     ProductSearchPipe,
     StarComponent,
     App_producrts,
-    HttpClient   
+       
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    HttpClientModule
   ],
   providers: [
     ProductService,
