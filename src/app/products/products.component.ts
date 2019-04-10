@@ -9,8 +9,10 @@ import { ProductService } from "./products.service";
   styleUrls: ['./products.component.css']
 })
 export class ProductsComponent implements OnInit {
-
-  constructor(private _App_productService:App_productService private _productService: ProductService) { }
+//
+  constructor(private _App_productService:App_productService, 
+    private _productService: ProductService
+    ) { }
   appProducts:any[];
   ngOnInit(): void {
     this.appProducts = this._App_productService.getAppProducts();
