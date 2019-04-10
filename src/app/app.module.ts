@@ -9,6 +9,8 @@ import { ProductsdescPipe } from './products/products-desc.pipe';
 import { ProductSearchPipe } from './products/productSearch.pipe';
 import { StarComponent } from './shared/star.component';
 import { ProductService } from './products/products.service';
+import { App_producrts } from './api_products/app_products.component';
+import { App_productService } from './api_products/app_products.service';
 import { HttpClient } from '@angular/common/http';
 
 @NgModule({
@@ -18,7 +20,8 @@ import { HttpClient } from '@angular/common/http';
     ProductsdescPipe,
     ProductSearchPipe,
     StarComponent,
-    HttpClient  
+    App_producrts,
+    HttpClient   
   ],
   imports: [
     BrowserModule,
@@ -27,6 +30,7 @@ import { HttpClient } from '@angular/common/http';
   ],
   providers: [
     ProductService,
+    App_productService
   ],
   bootstrap: [AppComponent]
 })
