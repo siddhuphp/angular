@@ -9,6 +9,7 @@ import { ProductsdescPipe } from './products/products-desc.pipe';
 import { ProductSearchPipe } from './products/productSearch.pipe';
 import { StarComponent } from './shared/star.component';
 import { ProductService } from './products/products.service';
+import { HttpClient } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { ProductService } from './products/products.service';
     ProductsComponent,    
     ProductsdescPipe,
     ProductSearchPipe,
-    StarComponent   
+    StarComponent,
+    HttpClient  
   ],
   imports: [
     BrowserModule,
