@@ -3,31 +3,37 @@
 <table class="table table-striped">
     <thead>
       <tr>
-        <th>Name</th>
-        <th>Price</th>
-        <th>Date</th>
-        <th>Rating</th>
-        <th>Description</th>
+        <th>Product ID</th>
+        <th>productName</th>
+        <th>productCode</th>
+        <th>releaseDate</th>
+        <th>description</th>
+        <th>price</th>
+        <th>starRating</th>
         <th><button class="btn btn-success" (click)="ToggleImage()">{{showImage?"Hide Image":"Show Image"}}</button></th>        
       </tr>
     </thead>
     <tbody *ngIf="appProducts && appProducts.length; else noDataApp">
       <tr *ngFor="let appProduct of appProducts | ProductSearchPipe:filterValue">
-        <td>{{appProduct.Name | uppercase }}</td>
-        <td [ngStyle]="{'background-color': appProduct.Price>5000?'green':'red'}">
-        {{appProduct.Price | currency:"₹" }}</td>
-        <td>{{appProduct.date | date:"MM/dd/yy"}}</td>
+        <td>{{appProduct.productId }}</td>
+        <td>{{appProduct.productName | uppercase }}</td>
+        <td>{{appProduct.productCode | uppercase }}</td>
+        <td>{{appProduct.releaseDate | date:"MM/dd/yy"}}</td>
+        <td>{{appProduct.description | Productsdesc}}</td>
+        <td [ngStyle]="{'background-color': appProduct.price>5000?'green':'red'}">
+        {{appProduct.price | currency:"₹" }}</td>
+       
         <td>
-          <app-star [rating] = "appProduct.rating" (ratingClicked)="onDataRecive($event)"></app-star>
+          <app-star [rating] = "appProduct.starRating" (ratingClicked)="onDataRecive($event)"></app-star>
         </td>
-        <td>{{appProduct.desc | Productsdesc}}</td>
-        <td><img [src]="appProduct.img" *ngIf="showImage"/></td>
+       
+        <td><img [src]="appProduct.imageUrl" *ngIf="showImage"/></td>
       </tr>     
     </tbody>
     <ng-template #noDataApp>
       <tbody>
         <tr>
-          <td><h3>No app data available</h3></td>
+          <td><img src ="../../assets/ajax-loader.gif" /></td>
         </tr>
       </tbody>
     </ng-template>    
